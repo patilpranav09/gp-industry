@@ -31,7 +31,7 @@ body {
 
 .nav-center {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   gap: 25px;
 }
 
@@ -122,6 +122,53 @@ body {
   background: #fff;
   color: #000;
   text-decoration: none;
+}
+
+.nav-spacer {
+  width: 120px;
+}
+/* Hamburger button */
+.nav-toggle {
+  display: none; /* hidden on desktop */
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  justify-self: end;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block; /* show hamburger */
+  }
+  .nav-spacer {
+    display: none;
+  }
+
+  .nav-center {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0b1b2b;
+    display: none; /* hidden by default */
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-center a {
+    display: block;
+    padding: 12px 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-center.open {
+    display: flex; /* show when toggled */
+  }
 }
 
 /* Dots */

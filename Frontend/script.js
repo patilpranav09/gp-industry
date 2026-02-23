@@ -36,7 +36,7 @@ if (contactForm) {
     statusText.textContent = "Sending message...";
 
     try {
-      const res = await fetch("https://api.expo-gpindustries.com/api/messages", {
+      const res = await fetch("https://gp-industry.onrender.com/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
@@ -72,4 +72,12 @@ document.querySelectorAll(".product-slider").forEach((slider) => {
   }, 3500); // change every 3.5 seconds
 });
 
+function toggleMenu() {
+  const nav = document.getElementById("mainNav");
+  nav.classList.toggle("open");
+}
 
+function closeMenu() {
+  const nav = document.getElementById("mainNav");
+  nav.classList.remove("open");
+}
