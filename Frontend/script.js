@@ -36,7 +36,7 @@ if (contactForm) {
     statusText.textContent = "Sending message...";
 
     try {
-      const res = await fetch("http://localhost:5000/api/messages", {
+      const res = await fetch("https://gp-industry.onrender.com/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
@@ -71,3 +71,4 @@ document.querySelectorAll(".product-slider").forEach((slider) => {
     showSlide(current);
   }, 3500); // change every 3.5 seconds
 });
+
