@@ -6,8 +6,11 @@
 }
 
 body {
-  background: #0b0f14;
+  background: #ffffff;
   color: #fff;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -15,7 +18,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: #ffffff;
   backdrop-filter: blur(6px);
   z-index: 1000;
 }
@@ -23,7 +26,7 @@ body {
 .nav-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 10px 20px;
+  padding: 16px 20px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -40,7 +43,7 @@ body {
 }
 
 .nav-center a {
-  color: #fff;
+  color: #59595b;
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -52,7 +55,7 @@ body {
   left: 0;
   bottom: -4px;
   width: 0%;
-  height: 2px;
+  height: 1px;
   background: #00ffcc;
   transition: 0.3s;
 }
@@ -73,14 +76,25 @@ body {
 }
 
 .nav-inner nav a {
-  color: #fff;
+  color: #59595b;
   text-decoration: none;
   margin: 0 12px;
+}
+.nav-center a:hover {
+  color: #3b3b3c;
+}
+
+.navbar {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav-spacer {
+  width: 120px;
 }
 
 /* Hero Slider */
 .hero-slider {
-  height: 100vh;
+  height: 80vh;
   position: relative;
   overflow: hidden;
 }
@@ -92,6 +106,7 @@ body {
   background-position: center;
   opacity: 0;
   transition: opacity 1s ease;
+  filter: brightness(1.25) contrast(1);
 }
 
 .slide.active {
@@ -99,16 +114,27 @@ body {
 }
 
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  display: none;
 }
 
-.hero-content {
+/* .hero-content {
   position: relative;
   z-index: 2;
   max-width: 600px;
-  padding: 120px 20px;
+  /* padding: 120px 20px; */
+/* } */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center; /* horizontal center */
+  text-align: center; /* center text */
+  padding: 0 20px;
 }
 
 .hero-content h1 {
@@ -124,16 +150,54 @@ body {
   text-decoration: none;
 }
 
-.nav-spacer {
-  width: 120px;
+.hero-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #00ffcc;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
+
+.hero-content h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.btn.outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  margin-left: 10px;
+}
+
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
 /* Hamburger button */
 .nav-toggle {
   display: none; /* hidden on desktop */
   font-size: 28px;
   background: none;
   border: none;
-  color: #fff;
+  color: #000000;
   cursor: pointer;
   justify-self: end;
 }
@@ -169,6 +233,15 @@ body {
   .nav-center.open {
     display: flex; /* show when toggled */
   }
+
+  .hero-slider {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-tag {
+    margin-top: 40px;
+  }
 }
 
 /* Dots */
@@ -198,7 +271,7 @@ body {
 }
 
 .section.dark {
-  background: #0b0f14;
+  background: #ffffff;
 }
 
 .container {
@@ -232,139 +305,6 @@ body {
   text-align: center;
 }
 
-/* Contact */
-/* Contact Section */
-.contact-section {
-  padding: 90px 20px;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.contact-info {
-  display: grid;
-  gap: 20px;
-}
-
-.contact-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 25px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.contact-card h3 {
-  margin-bottom: 8px;
-  color: #00ffcc;
-}
-
-.contact-card p {
-  color: #ddd;
-}
-
-/* Form Box */
-.contact-form-box {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.contact-form-box h3 {
-  margin-bottom: 20px;
-  color: #00ffcc;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-}
-
-.btn-primary {
-  background: #00ffcc;
-  color: #000;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.form-status {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  background: #000;
-}
-.hero-tag {
-  display: inline-block;
-  margin-bottom: 10px;
-  color: #00ffcc;
-  letter-spacing: 2px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.hero-content h1 {
-  font-size: 52px;
-  margin-bottom: 15px;
-}
-
-.hero-content p {
-  font-size: 18px;
-  color: #ddd;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.hero-buttons {
-  margin-bottom: 20px;
-}
-
-.btn.outline {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  margin-left: 10px;
-}
-
-.hero-points {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  font-size: 14px;
-  color: #ccc;
-}
-
 /* About Section Layout Fix */
 .about-modern {
   padding: 90px 20px;
@@ -391,6 +331,8 @@ body {
 .about-left p {
   color: #ccc;
   line-height: 1.7;
+
+  font-weight: 500;
   margin-bottom: 15px;
 }
 
@@ -416,10 +358,10 @@ body {
   max-width: 380px;
   width: 100%;
   text-align: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(250 250 250 / 10%);
   padding: 35px 30px;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgb(244 244 244 / 10%);
 }
 
 .owner-card-large .owner-img {
@@ -438,12 +380,13 @@ body {
 
 .owner-card-large span {
   font-size: 14px;
-  color: #00ffcc;
+  color: #b4b4b4;
 }
 
 .owner-card-large p {
   margin-top: 12px;
   font-size: 15px;
+  font-weight: 500;
   color: #ccc;
   line-height: 1.6;
 }
@@ -457,20 +400,21 @@ body {
 }
 
 .about-box {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(250 250 250 / 10%);
   padding: 25px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgb(244 244 244 / 10%);
 }
 
 .about-box h3 {
   margin-bottom: 10px;
-  color: #00ffcc;
+  color: #ffffff;
 }
 
 .about-box p {
   color: #ddd;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 /* Responsive */
@@ -497,11 +441,12 @@ body {
   text-align: center;
   font-size: 38px;
   margin-bottom: 10px;
+  color: rgb(0, 0, 0);
 }
 
 .section-subtitle {
   text-align: center;
-  color: #ccc;
+  color: #000000;
   margin-bottom: 50px;
   font-size: 17px;
 }
@@ -513,10 +458,10 @@ body {
 }
 
 .service-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(226 226 226 / 45%);
   padding: 28px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgb(255 255 255 / 56%);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -524,22 +469,23 @@ body {
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15);
+  box-shadow: 0 10px 30px rgb(136 138 138 / 49%);
 }
 
 .service-card h3 {
   margin-bottom: 12px;
-  color: #00ffcc;
+  color: #021c16;
   font-size: 20px;
 }
 
 .service-card p {
-  color: #ddd;
+  color: #5d5353;
   line-height: 1.6;
   font-size: 15px;
+  font-family: sans-serif;
 }
 .service-icon {
-  color: #00ffcc;
+  color: #dc7c31;
   margin-right: 10px;
   font-size: 20px;
 }
@@ -562,6 +508,11 @@ body {
   padding: 90px 20px;
 }
 
+.section-title-product,
+.section-subtitle-product {
+  color: #ffffff;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -569,10 +520,10 @@ body {
 }
 
 .product-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(226 226 226 / 45%);
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgb(255 255 255 / 56%);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -588,6 +539,7 @@ body {
   height: 290px;
   object-fit: cover;
   display: block;
+  border-radius: 18px;
 }
 
 .product-card h3 {
@@ -631,10 +583,10 @@ body {
 
 /* Bigger Product Card */
 .product-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(226 226 226);
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgb(255 255 255 / 56%);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -672,15 +624,47 @@ body {
 }
 
 .product-content h3 {
-  color: #00ffcc;
+  color: #000000;
   margin-bottom: 10px;
   font-size: 22px;
 }
 
 .product-content p {
-  color: #ddd;
+  color: #000000;
   font-size: 15px;
   line-height: 1.6;
+}
+
+#products {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 20px;
+}
+
+/* Video */
+.products-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Overlay for readability */
+.products-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65); /* adjust brightness */
+  z-index: -1;
+}
+
+/* Make content appear above video */
+#products .container {
+  position: relative;
+  z-index: 2;
 }
 
 /* Responsive */
@@ -755,12 +739,113 @@ body {
   }
 }
 
+/* Contact */
+/* Contact Section */
+.contact-section {
+  padding: 90px 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.contact-info {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-card {
+  background: rgb(218 217 217 / 45%);
+  /* background-color: #000f3b; */
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 19px rgb(136 138 138 / 49%);
+}
+
+.contact-card h3 {
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.contact-card p {
+  color: #000000;
+}
+
+/* Form Box */
+.contact-form-box {
+  background: rgb(218 217 217 / 45%);
+  /* background-color: #84a3fc; */
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgb(136 138 138 / 49%);
+}
+
+.contact-form-box h3 {
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background: #23c22bab;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  background: #049b0bab;
+}
+
+.form-status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #161515;
+}
+
 /* Section Background Variations */
 
 /* About Section - Dark Blue Gradient */
 #about {
   /* background: linear-gradient(135deg, #0c1739, #000000); */
-  background: linear-gradient(135deg, #213f9b, #000000);
+  /* background: linear-gradient(90deg, #ae0000, #f91616); */
+  background:
+    linear-gradient(90deg, rgb(233 8 28) 0%, rgb(200 12 28) 100%), #ce202f;
   /* background: linear-gradient(135deg, #0b132b, #1c2541);  */
 }
 
@@ -768,18 +853,15 @@ body {
 #services {
   /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
   /* background: linear-gradient(135deg, #4b240a, #2d1701, #a14400a6); */
-  background: linear-gradient(135deg, #000000, #213f9b);
+  /* background: linear-gradient(135deg, #000000, #213f9b); */
+  background: #fefefe;
 }
 
 /* Products Section - Dark Greenish Gradient */
-#products {
-  /* background: linear-gradient(135deg, #0b1f17, #102a23); */
-  /* background: linear-gradient(135deg, #118165, #00120d); */
-  background: linear-gradient(135deg, #213f9b, #000000);
-}
 
 #certifications {
-  background: linear-gradient(135deg, #000000, #213f9b);
+  /* background: linear-gradient(135deg, #000000, #213f9b); */
+  background-color: #d8d8d8;
   padding: 90px 20px;
 }
 
@@ -787,7 +869,7 @@ body {
 #contact {
   /* background: linear-gradient(135deg, #0f0f0f, #1a1a1a); */
   /* background: linear-gradient(135deg, #213f9b, #000000); */
-  background-color: #000f3b;
+  background: #ffffff;
 }
 
 /* Common spacing fix so backgrounds look clean */
