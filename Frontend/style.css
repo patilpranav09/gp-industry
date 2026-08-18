@@ -831,6 +831,9 @@ html {
   margin-top: 10px;
   font-size: 14px;
 }
+#contactStatus {
+  color: #524848;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
