@@ -4,6 +4,10 @@ A business website developed for **GP Industries** to showcase the company's pro
 
 I developed the website frontend and implemented the backend functionality for the contact enquiry form. Submitted enquiries are stored in MongoDB and email notifications are sent using Nodemailer.
 
+## Live Website
+
+🌐 [Visit GP Industries Website](https://expo-gpindustries.com/)
+
 ## Project Demo
 
 [▶️ Watch GP Industries Website Demo](https://drive.google.com/file/d/1AHxSc_7ZXhfGV6WkMAbYvS9DN6FB4R44/view?usp=sharing)
